@@ -1,7 +1,6 @@
 //richiedo nome cliente
 var name = prompt("Come si chiama?");
 var infoName = "Gentile, " + name;
-console.log(infoName);
 document.getElementById("html-name").innerHTML = infoName;
 //richiedo eta passeggero con controllo numerico
 var age;
@@ -12,7 +11,6 @@ while (isNaN  (age)){
 
 var infoAge = "Età: " + age;
 var min, max, standard ;
-console.log(infoAge);
 
 if (age < 18) {
   infoAge = min = "Non sei ancora maggiorenne! Hai quindi diritto ad uno sconto del 20%!!"
@@ -21,14 +19,12 @@ if (age < 18) {
 } else {
   infoAge = standard = ""
 }
-console.log(infoAge);
 document.getElementById("html-age").innerHTML = infoAge;
 
 
 //richiedo destinazione
 var city = prompt("Dove vuole andare?");
 var infoCity = "Destinazione: " + city;
-console.log(infoCity);
 document.getElementById("html-city").innerHTML = infoCity;
 
 //richiedo numero di km con controllo numerico
@@ -39,13 +35,11 @@ while (isNaN(km)){
 }
 
 var infoKm = "Km: " + km;
-console.log(infoKm);
 document.getElementById("html-km").innerHTML = infoKm;
 
 //calcolo prezzo piglietto
 var price = (0.21 * km).toFixed(2);
 var infoPrice = "Il prezzo senza sconto è " + price;
-console.log(infoPrice);
 document.getElementById("html-price").innerHTML = infoPrice;
 
 //sconto
@@ -61,4 +55,3 @@ if (infoAge = min){
 } else {
   document.getElementById("html-price-discount").innerHTML = noDiscount;
 }
-console.log(infoPrice);
