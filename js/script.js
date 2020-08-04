@@ -2,7 +2,7 @@
 var name = prompt("Come si chiama?");
 var infoName = "Gentile, " + name;
 console.log(infoName);
-
+document.getElementById("html-name").innerHTML = infoName;
 //richiedo eta passeggero con controllo numerico
 var age;
   age = parseInt(prompt("Quanti anni ha?"));
@@ -11,21 +11,25 @@ while (isNaN  (age)){
 }
 
 var infoAge = "Età: " + age;
-var min, max;
+var min, max, standard ;
 console.log(infoAge);
 
 if (age < 18) {
-  infoAge = min = "Non sei ancora maggiorenne!"
+  infoAge = min = "Non sei ancora maggiorenne! Hai quindi diritto ad uno sconto del 20%!!"
 } else if (age >=65) {
-  infoAge = max = "Sei più che maggiorenne!"
+  infoAge = max = "Sei più che maggiorenne! Hai quindi diritto ad uno sconto del 40%!!"
+} else {
+  infoAge = standard = ""
 }
 console.log(infoAge);
+document.getElementById("html-age").innerHTML = infoAge;
 
 
 //richiedo destinazione
 var city = prompt("Dove vuole andare?");
 var infoCity = "Destinazione: " + city;
 console.log(infoCity);
+document.getElementById("html-city").innerHTML = infoCity;
 
 //richiedo numero di km con controllo numerico
 var km
@@ -34,17 +38,27 @@ while (isNaN(km)){
   km = prompt("Ops, hai sbagliato qualcosa! Riprova");
 }
 
-var infoKm = "KM: " + km;
+var infoKm = "Km: " + km;
 console.log(infoKm);
+document.getElementById("html-km").innerHTML = infoKm;
 
 //calcolo prezzo piglietto
-var price = 0.21 * km;
-console.log("Il prezzo senza sconto è " + price)
+var price = (0.21 * km).toFixed(2);
+var infoPrice = "Il prezzo senza sconto è " + price;
+console.log(infoPrice);
+document.getElementById("html-price").innerHTML = infoPrice;
+
 //sconto
+var infoPriceDiscount = "Il prezzo scontato è " + price;
+var noDiscount = "Non ha diritto ad alcuno sconto";
+
 if (infoAge = min){
   price = (price * 0.8).toFixed(2);
+  document.getElementById("html-price-discount").innerHTML = infoPriceDiscount;
 } else if (infoAge = max){
   price = (price * 0.6).toFixed(2);
+  document.getElementById("html-price-discount").innerHTML = infoPriceDiscount;
+} else {
+  document.getElementById("html-price-discount").innerHTML = noDiscount;
 }
-console.log("Il prezzo scontato è " + price)
-//prezzo finale biglietto
+console.log(infoPrice);
